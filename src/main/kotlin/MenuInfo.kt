@@ -1,7 +1,7 @@
 package notes
 
 enum class MenuInfo {
-    CREATE,ARCHIVE,NOTE,VIEW
+    CREATE, ARCHIVE, NOTE, VIEW
 }
 
 

@@ -4,7 +4,7 @@ import java.util.Scanner
 
 class ArchiveManager {
     fun createArchive(
-        scanner : Scanner,
+        scanner: Scanner,
         selectedArchiveIndex: Int,
         changeStatus: (state: MenuInfo) -> Unit,
         addNote: (note: Note) -> Unit,

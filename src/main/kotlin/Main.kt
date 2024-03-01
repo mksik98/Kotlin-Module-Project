@@ -46,45 +46,46 @@ fun main() {
 
         var selectedIndex: Int?
 
-      while (true) {
+        while (true) {
 
             val input = scanner.nextLine()
 
             try {
-               selectedIndex = input.toInt()
+                selectedIndex = input.toInt()
 
-               if (selectedIndex == 0) {
-                   menuInfo = MenuInfo.CREATE
-                   break
-               } else if (selectedIndex < menu.menuPos.lastIndex && selectedIndex >= 0) {
-                   when (menuInfo) {
-                       MenuInfo.ARCHIVE -> {
+                if (selectedIndex == 0) {
+                    menuInfo = MenuInfo.CREATE
+                    break
+                } else if (selectedIndex < menu.menuPos.lastIndex && selectedIndex >= 0) {
+                    when (menuInfo) {
+                        MenuInfo.ARCHIVE -> {
                             selectedArchiveIndex = selectedIndex - 1
-                           menuInfo = MenuInfo.NOTE
-                       }
+                            menuInfo = MenuInfo.NOTE
+                        }
 
                         MenuInfo.NOTE -> {
                             selectedNoteIndex = selectedIndex - 1
-                           menuInfo = MenuInfo.VIEW
+                            menuInfo = MenuInfo.VIEW
                         }
-                       else -> {}
+
+                        else -> {}
 
 
-                   }
-                  break
-               } else if (selectedIndex == menu.menuPos.lastIndex) {
-                  when (menuInfo) {
+                    }
+                    break
+                } else if (selectedIndex == menu.menuPos.lastIndex) {
+                    when (menuInfo) {
                         MenuInfo.NOTE -> menuInfo = MenuInfo.ARCHIVE
                         else -> return
                     }
                     break
-               } else {
-                   println("Некорректный ввод. Пожалуйста, введите число из доступных опций.")
+                } else {
+                    println("Некорректный ввод. Пожалуйста, введите число из доступных опций.")
                 }
             } catch (e: NumberFormatException) {
-               println("Некорректный ввод. Пожалуйста, введите число.")
+                println("Некорректный ввод. Пожалуйста, введите число.")
             }
-          continue
+            continue
         }
 
     }

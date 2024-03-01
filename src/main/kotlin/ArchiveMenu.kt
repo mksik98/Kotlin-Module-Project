@@ -1,3 +1,3 @@
 package notes
 
-data class ArchiveMenu(val title:String)
+data class ArchiveMenu(val title: String)
